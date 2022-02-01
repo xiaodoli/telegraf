@@ -11,3 +11,5 @@ process.yml
 /*.conf
 resource.syso
 versioninfo.json
+get_token
+get_token.exe

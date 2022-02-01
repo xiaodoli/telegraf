@@ -375,3 +375,6 @@ replace github.com/cisco-ie/nx-telemetry-proto => github.com/sbezverk/nx-telemet
 
 // replaced due to open PR updating protobuf https://github.com/riemann/riemann-go-client/pull/27
 replace github.com/riemann/riemann-go-client => github.com/dstrand1/riemann-go-client v0.5.1-0.20211028194734-b5eb11fb5754
+
+// replace due to https://github.com/Azure/azure-event-hubs-go/issues/241
+replace github.com/Azure/azure-event-hubs-go/v3 => github.com/xiaodoli/azure-event-hubs-go/v3 v3.3.18
