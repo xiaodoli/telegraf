@@ -405,6 +405,9 @@ jobs:
           destination: 'build/dist'
       - run:
           command: |
+            cd build/dist && find . -type f -name '._*' -delete
+      - run:
+          command: |
             echo "This job contains all the final artifacts."
   share-artifacts:
     executor: aws-cli/default
