@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	cloud.google.com/go/bigquery v1.8.0
-	cloud.google.com/go/monitoring v0.2.0
+	cloud.google.com/go/monitoring v1.2.0
 	cloud.google.com/go/pubsub v1.17.1
 	collectd.org v0.5.0
 	github.com/Azure/azure-event-hubs-go/v3 v3.3.17
@@ -64,7 +64,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.2.0
 	github.com/golang/geo v0.0.0-20190916061304-5b978397cfec
 	github.com/golang/snappy v0.0.4
-	github.com/google/go-cmp v0.5.6
+	github.com/google/go-cmp v0.5.7
 	github.com/google/go-github/v32 v32.1.0
 	github.com/gopcua/opcua v0.2.3
 	github.com/gophercloud/gophercloud v0.16.0
@@ -96,7 +96,7 @@ require (
 	github.com/microsoft/ApplicationInsights-Go v0.4.4
 	github.com/miekg/dns v1.1.43
 	github.com/moby/ipvs v1.0.1
-	github.com/multiplay/go-ts3 v1.0.0
+	github.com/multiplay/go-ts3 v1.0.1
 	github.com/nats-io/nats-server/v2 v2.6.5
 	github.com/nats-io/nats.go v1.13.1-0.20211018182449-f2416a8b1483
 	github.com/newrelic/newrelic-telemetry-sdk-go v0.5.1
@@ -133,8 +133,8 @@ require (
 	github.com/wavefronthq/wavefront-sdk-go v0.9.9
 	github.com/wvanbergen/kafka v0.0.0-20171203153745-e2edea948ddf
 	github.com/xdg/scram v1.0.3
-	go.mongodb.org/mongo-driver v1.7.3
-	go.opentelemetry.io/collector/model v0.39.0
+	go.mongodb.org/mongo-driver v1.8.3
+	go.opentelemetry.io/collector/model v0.43.2
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.24.0
 	go.opentelemetry.io/otel/metric v0.24.0
 	go.opentelemetry.io/otel/sdk/metric v0.24.0
@@ -377,4 +377,4 @@ replace github.com/cisco-ie/nx-telemetry-proto => github.com/sbezverk/nx-telemet
 replace github.com/riemann/riemann-go-client => github.com/dstrand1/riemann-go-client v0.5.1-0.20211028194734-b5eb11fb5754
 
 // replace due to https://github.com/Azure/azure-event-hubs-go/issues/241
-replace github.com/Azure/azure-event-hubs-go/v3 => github.com/xiaodoli/azure-event-hubs-go/v3 v3.3.18
+replace github.com/Azure/azure-event-hubs-go/v3 => github.com/xiaodoli/azure-event-hubs-go/v3 v3.3.19
