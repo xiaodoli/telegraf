@@ -23,7 +23,8 @@ func main() {
     client_id := os.Getenv("client_id")
     client_secret := os.Getenv("client_secret")
     oauth_audience := os.Getenv("oauth_audience")
-    oauth_grant_type := os.Getenv("oauth_grant_type")
+    oauth_grant_type := os.Getenv("oauth_grant_type")    
+    oauth_content_type := os.Getenv("oauth_content_type")
     output_file := "/tmp/telegraf/access_token"
     if len(client_id) == 0 {
         log.Printf("invalid client_id, %d\n", len(client_id))
@@ -40,12 +41,16 @@ func main() {
         return
     }
 
-    payload := strings.NewReader(`{
-        "client_id":"` + client_id + `",
-    "client_secret":"` + client_secret + `",
-    "audience":"` + oauth_audience + `",
-    "grant_type":"` + oauth_grant_type + `"
-    }`)
+    if (len(oauth_content_type) > 0 && strings.EqualFold(oauth_content_type, "application/json")) {
+        payload := strings.NewReader(`{
+            "client_id":"` + client_id + `",
+        "client_secret":"` + client_secret + `",
+        "audience":"` + oauth_audience + `",
+        "grant_type":"` + oauth_grant_type + `"
+        }`)
+    } else {
+        payload := strings.NewReader("client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type= " + grant_type + "&audiance=" + audiance + "")
+    }
 
     client := &http.Client{}
     req, err := http.NewRequest(method, url, payload)
@@ -54,7 +59,8 @@ func main() {
         fmt.Println(err)
         return
     }
-    req.Header.Add("Content-Type", "application/json")
+    
+    req.Header.Add("Content-Type", oauth_content_type)
 
     res, err := client.Do(req)
     if err != nil {
