@@ -49,7 +49,7 @@ func main() {
         "grant_type":"` + oauth_grant_type + `"
         }`)
     } else {
-        payload := strings.NewReader("client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type= " + grant_type + "&audiance=" + audiance + "")
+        payload := strings.NewReader("client_id=" + client_id + "&client_secret=" + client_secret + "&grant_type= " + oauth_grant_type + "&audiance=" + oauth_audience + "")
     }
 
     client := &http.Client{}
